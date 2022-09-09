@@ -11,6 +11,7 @@ namespace NorthWindWithLinq.Models
     {
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Product> Products { get; set; }
         public NorthwindContext()        {   }       //The constructor that doesn't do anything. Only needed for console apps
         public NorthwindContext(DbContextOptions<NorthwindContext> options) : base(options) { }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
+//This is how the Package Manage Console did the Context 
+/*
 namespace NorthWindWithLinq
 {
     public partial class NorthwindContext : DbContext
@@ -702,3 +704,4 @@ namespace NorthWindWithLinq
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
+*/
