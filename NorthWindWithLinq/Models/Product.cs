@@ -10,8 +10,8 @@ namespace NorthWindWithLinq.Models
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public int? SupplierId { get; set; }
-        public int? CategoryId { get; set; }
+        public int? SupplierId { get; set; }            //Fk
+        public int? CategoryId { get; set; }            //FK
         public string? QuantityPerUnit { get; set; }
         public decimal? UnitPrice { get; set; }
         public short? UnitsInStock { get; set; }
@@ -19,7 +19,7 @@ namespace NorthWindWithLinq.Models
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
 
-        public override string ToString()               //This will display all the columns in the class
+        public override string ToString()               //When you overide this, it'll be the default when you do a writeline
         {
             return $"Product Id : {ProductId}\n" +      // the \n will put it on a new line
                 $"Product Name : {ProductName}\n";

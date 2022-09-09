@@ -3,11 +3,30 @@ using NorthWindWithLinq.Models;
 
 
 NorthwindContext _context = new();
+var suppliers = _context.Suppliers.ToList();
 var products = _context.Products.ToList();
 
-products.ForEach(p => Console.WriteLine(p.ToString()));
 
 
+var SupplierProd = from S in _context.Suppliers
+                   join P in _context.Products
+                   on S.SupplierId equals P.SupplierId
+                   orderby S.CompanyName
+                   select new       //Select new: Pick a property from the table you are joining together
+                   {
+                       Supplier = S.CompanyName, Product = P.ProductName        //Putting this as a new alias in oder to call later
+                   };
+
+foreach (var S in SupplierProd)
+{
+    Console.WriteLine($"{S.Supplier} {S.Product}"); 
+}
+/*
+var products = _context.Products.ToList();
+
+products.ForEach(p => Console.WriteLine(p));
+
+*/
 
 /*
 
